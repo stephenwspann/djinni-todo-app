@@ -10,6 +10,7 @@ namespace todolist {
     char *zErrMsg = 0;
     int rc;
     std::string sql;
+    sqlite3_stmt *statement;
   
     std::shared_ptr<TodoList> TodoList::create() {
         return std::make_shared<TodoListImpl>();
@@ -21,7 +22,6 @@ namespace todolist {
   
     std::vector<Todo> TodoListImpl::get_todos() {
         
-        sqlite3_stmt *statement;
         std::vector<Todo> todos;
         
         // get all records
@@ -96,17 +96,13 @@ namespace todolist {
         
     }
     
-    // Wrapper to handle errors, etc on common queries.
+    // wrapper to handle errors, etc on simple queries
     void TodoListImpl::_handle_query(std::string sql) {
-        
-        
         rc = sqlite3_exec(db, sql.c_str(), 0, 0, &zErrMsg);
         if(rc != SQLITE_OK){
             fprintf(stderr, "SQL error: %s\n", zErrMsg);
             sqlite3_free(zErrMsg);
             return;
-        } else {
-            
         }
     }
     
@@ -114,38 +110,40 @@ namespace todolist {
         
         // open the database, create it if necessary
         rc = sqlite3_open_v2("todo.db", &db, SQLITE_OPEN_READWRITE | SQLITE_OPEN_CREATE, NULL);
-        
-        if( rc ){
+        if(rc){
             fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
             sqlite3_close(db);
             return;
-        } else {
-            
         }
         
-        // check if the table exists already
-        // if not, create it and insert some data
-        sql = "SELECT name FROM sqlite_master WHERE type='table' AND name='todos'";
-        _handle_query(sql);
-        
+        // create the table if it doesn't exist
         sql = "CREATE TABLE IF NOT EXISTS todos("  \
             "id INTEGER PRIMARY KEY AUTOINCREMENT    NOT NULL," \
             "label          TEXT    NOT NULL," \
             "status         INT     NOT NULL);";
         _handle_query(sql);
         
-        sql = "INSERT INTO todos (label, status) "  \
-            "VALUES ('Learn C++', 'COMPLETE'); " \
-            "INSERT INTO todos (label, status) "  \
-            "VALUES ('Learn Djinni', 'COMPLETE'); "     \
-            "INSERT INTO todos (label, status)" \
-            "VALUES ('Write Some Tutorials', 'COMPLETE');" \
-            "INSERT INTO todos (label, status)" \
-            "VALUES ('Build Some Apps', 'INCOMPLETE');" \
-            "INSERT INTO todos (label, status)" \
-            "VALUES ('Profit', 'INCOMPLETE');";
-        _handle_query(sql);
-
+        // check if table is empty... if so, add some data.
+        sql = "SELECT * FROM todos";
+        if(sqlite3_prepare_v2(db, sql.c_str(), (sizeof(sql)+1), &statement, 0) == SQLITE_OK) {
+            int stat = sqlite3_step(statement);
+            if (stat == SQLITE_DONE) {
+                // table was empty, add some data
+                sql = "INSERT INTO todos (label, status) "  \
+                    "VALUES ('Learn C++', 'COMPLETE'); " \
+                    "INSERT INTO todos (label, status) "  \
+                    "VALUES ('Learn Djinni', 'COMPLETE'); "     \
+                    "INSERT INTO todos (label, status)" \
+                    "VALUES ('Write Some Tutorials', 'COMPLETE');" \
+                    "INSERT INTO todos (label, status)" \
+                    "VALUES ('Build Some Apps', 'INCOMPLETE');" \
+                    "INSERT INTO todos (label, status)" \
+                    "VALUES ('Profit', 'INCOMPLETE');";
+                _handle_query(sql);
+            }
+        }
+        sqlite3_finalize(statement);
+        
     }
   
 }
