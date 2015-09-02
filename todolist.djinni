@@ -1,34 +1,18 @@
-list_change = record {
-    from_index: i32;
-    to_index: i32;
+todo_status = enum {
+    complete;
+    incomplete;
 }
 
-todo_list_vm_cell = record {
-    todo_id: i64;
+todo = record {
+    id: i32;
     label: string;
-}
-
-todo_list_vm = interface +c {
-    # the total number of results in this list
-    count(): i32;
-    # get the data for an individual user
-    get(index: i32): optional<todo_list_vm_cell>;
-
-    # Delete a row from the view model.  This view model will still remain immutable but a
-    # new view model will be sent through the observer interface.
-    delete_row(index: i32);
-}
-
-todo_list_vm_observer = interface +o +j {
-    on_update(changes: optional<list<list_change>>, new_data: todo_list_vm);
-}
-
-todo_list_vm_handle = interface +c {
-    start(observer: todo_list_vm_observer);
-    stop();
+    status: todo_status;
 }
 
 todo_list = interface +c {
     static create(): todo_list;
-    observer_todo_list(): todo_list_vm_handle;
+    get_todos(): list<todo>;
+    add_todo(label: string): i32;
+    update_todo_status(id: i32, status: todo_status): bool;
+    delete_todo(id: i32): bool;
 }
