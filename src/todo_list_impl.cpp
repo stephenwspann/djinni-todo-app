@@ -34,12 +34,10 @@ namespace todolist {
                     
                     int32_t id = sqlite3_column_int(statement, 0);
                     std::string label = (char*)sqlite3_column_text(statement, 1);
+                    TodoStatus status = TodoStatus::INCOMPLETE;
                     std::string status_string = (char*)sqlite3_column_text(statement, 2);
-                    TodoStatus status;
                     if (status_string == "COMPLETE") {
                         status = TodoStatus::COMPLETE;
-                    } else {
-                        status = TodoStatus::INCOMPLETE;
                     }
                     
                     Todo temp_todo = {
