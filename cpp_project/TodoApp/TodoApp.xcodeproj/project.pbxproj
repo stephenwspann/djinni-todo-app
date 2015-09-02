@@ -1,0 +1,268 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F1C2DF1D1B962E48006BDDC1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1C2DF1C1B962E48006BDDC1 /* main.cpp */; };
+		F1C2DF241B963322006BDDC1 /* libsqlite3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C2DF231B963322006BDDC1 /* libsqlite3.a */; };
+		F1C2DF271B9641FA006BDDC1 /* todo_list_impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1C2DF251B9641FA006BDDC1 /* todo_list_impl.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F1C2DF171B962E48006BDDC1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		F1C2DF191B962E48006BDDC1 /* TodoApp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TodoApp; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1C2DF1C1B962E48006BDDC1 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		F1C2DF231B963322006BDDC1 /* libsqlite3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libsqlite3.a; path = "../../deps/build/Debug-iphoneos/libsqlite3.a"; sourceTree = "<group>"; };
+		F1C2DF251B9641FA006BDDC1 /* todo_list_impl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = todo_list_impl.cpp; path = ../../../src/todo_list_impl.cpp; sourceTree = "<group>"; };
+		F1C2DF261B9641FA006BDDC1 /* todo_list_impl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = todo_list_impl.hpp; path = ../../../src/todo_list_impl.hpp; sourceTree = "<group>"; };
+		F1C2DF281B96421F006BDDC1 /* todo_list.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = todo_list.hpp; path = "../../../generated-src/cpp/todo_list.hpp"; sourceTree = "<group>"; };
+		F1C2DF291B9652EB006BDDC1 /* todo_status.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = todo_status.hpp; path = "../../../generated-src/cpp/todo_status.hpp"; sourceTree = "<group>"; };
+		F1C2DF2A1B9652EB006BDDC1 /* todo.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = todo.hpp; path = "../../../generated-src/cpp/todo.hpp"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F1C2DF161B962E48006BDDC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1C2DF241B963322006BDDC1 /* libsqlite3.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F1C2DF101B962E48006BDDC1 = {
+			isa = PBXGroup;
+			children = (
+				F1C2DF231B963322006BDDC1 /* libsqlite3.a */,
+				F1C2DF1B1B962E48006BDDC1 /* TodoApp */,
+				F1C2DF1A1B962E48006BDDC1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F1C2DF1A1B962E48006BDDC1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F1C2DF191B962E48006BDDC1 /* TodoApp */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F1C2DF1B1B962E48006BDDC1 /* TodoApp */ = {
+			isa = PBXGroup;
+			children = (
+				F1C2DF291B9652EB006BDDC1 /* todo_status.hpp */,
+				F1C2DF2A1B9652EB006BDDC1 /* todo.hpp */,
+				F1C2DF281B96421F006BDDC1 /* todo_list.hpp */,
+				F1C2DF251B9641FA006BDDC1 /* todo_list_impl.cpp */,
+				F1C2DF261B9641FA006BDDC1 /* todo_list_impl.hpp */,
+				F1C2DF1C1B962E48006BDDC1 /* main.cpp */,
+			);
+			path = TodoApp;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F1C2DF181B962E48006BDDC1 /* TodoApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1C2DF201B962E48006BDDC1 /* Build configuration list for PBXNativeTarget "TodoApp" */;
+			buildPhases = (
+				F1C2DF151B962E48006BDDC1 /* Sources */,
+				F1C2DF161B962E48006BDDC1 /* Frameworks */,
+				F1C2DF171B962E48006BDDC1 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TodoApp;
+			productName = TodoApp;
+			productReference = F1C2DF191B962E48006BDDC1 /* TodoApp */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F1C2DF111B962E48006BDDC1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "My Company";
+				TargetAttributes = {
+					F1C2DF181B962E48006BDDC1 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+				};
+			};
+			buildConfigurationList = F1C2DF141B962E48006BDDC1 /* Build configuration list for PBXProject "TodoApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F1C2DF101B962E48006BDDC1;
+			productRefGroup = F1C2DF1A1B962E48006BDDC1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F1C2DF181B962E48006BDDC1 /* TodoApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F1C2DF151B962E48006BDDC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1C2DF1D1B962E48006BDDC1 /* main.cpp in Sources */,
+				F1C2DF271B9641FA006BDDC1 /* todo_list_impl.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F1C2DF1E1B962E48006BDDC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		F1C2DF1F1B962E48006BDDC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		F1C2DF211B962E48006BDDC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/stephenspann/Apps/djinni-todo-app/deps/build/Debug-iphoneos",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../deps $(SRCROOT)/../../generated-src/cpp";
+			};
+			name = Debug;
+		};
+		F1C2DF221B962E48006BDDC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/stephenspann/Apps/djinni-todo-app/deps/build/Debug-iphoneos",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../deps $(SRCROOT)/../../generated-src/cpp";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F1C2DF141B962E48006BDDC1 /* Build configuration list for PBXProject "TodoApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1C2DF1E1B962E48006BDDC1 /* Debug */,
+				F1C2DF1F1B962E48006BDDC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F1C2DF201B962E48006BDDC1 /* Build configuration list for PBXNativeTarget "TodoApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1C2DF211B962E48006BDDC1 /* Debug */,
+				F1C2DF221B962E48006BDDC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F1C2DF111B962E48006BDDC1 /* Project object */;
+}
