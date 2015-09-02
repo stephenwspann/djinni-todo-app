@@ -34,16 +34,12 @@ namespace todolist {
                     
                     int32_t id = sqlite3_column_int(statement, 0);
                     std::string label = (char*)sqlite3_column_text(statement, 1);
-                    TodoStatus status = TodoStatus::INCOMPLETE;
-                    std::string status_string = (char*)sqlite3_column_text(statement, 2);
-                    if (status_string == "COMPLETE") {
-                        status = TodoStatus::COMPLETE;
-                    }
+                    int32_t completed = sqlite3_column_int(statement, 2);
                     
                     Todo temp_todo = {
                         id,
                         label,
-                        status
+                        completed
                     };
                     todos.push_back(temp_todo);
                     
@@ -61,8 +57,8 @@ namespace todolist {
     int32_t TodoListImpl::add_todo(const std::string & label) {
   
         // add a record
-        sql = "INSERT INTO todos (label, status) "  \
-            "VALUES ('" + label + "', 'INCOMPLETE'); ";
+        sql = "INSERT INTO todos (label, completed) "  \
+            "VALUES ('" + label + "', 0); ";
         _handle_query(sql);
         
         int32_t rowId = (int)sqlite3_last_insert_rowid(db);
@@ -71,15 +67,11 @@ namespace todolist {
   
     }
     
-    bool TodoListImpl::update_todo_status(int32_t id, TodoStatus status) {
-        
-        std::string statusString = "INCOMPLETE";
-        if (status == TodoStatus::COMPLETE) {
-            statusString = "COMPLETE";
-        }
+    bool TodoListImpl::update_todo_completed(int32_t id, int32_t completed) {
         
         // update a record's status
-        sql = "UPDATE todos SET status = '" + statusString + "' WHERE id = " + std::to_string(id) + ";";
+        sql = "UPDATE todos SET completed = " + std::to_string(completed) + " " \
+            "WHERE id = " + std::to_string(id) + ";";
         _handle_query(sql);
         
         return 1;
@@ -120,7 +112,7 @@ namespace todolist {
         sql = "CREATE TABLE IF NOT EXISTS todos("  \
             "id INTEGER PRIMARY KEY AUTOINCREMENT    NOT NULL," \
             "label          TEXT    NOT NULL," \
-            "status         INT     NOT NULL);";
+            "completed         INT     NOT NULL);";
         _handle_query(sql);
         
         // check if table is empty... if so, add some data.
@@ -129,16 +121,16 @@ namespace todolist {
             int stat = sqlite3_step(statement);
             if (stat == SQLITE_DONE) {
                 // table was empty, add some data
-                sql = "INSERT INTO todos (label, status) "  \
-                    "VALUES ('Learn C++', 'COMPLETE'); " \
-                    "INSERT INTO todos (label, status) "  \
-                    "VALUES ('Learn Djinni', 'COMPLETE'); "     \
-                    "INSERT INTO todos (label, status)" \
-                    "VALUES ('Write Some Tutorials', 'COMPLETE');" \
-                    "INSERT INTO todos (label, status)" \
-                    "VALUES ('Build Some Apps', 'INCOMPLETE');" \
-                    "INSERT INTO todos (label, status)" \
-                    "VALUES ('Profit', 'INCOMPLETE');";
+                sql = "INSERT INTO todos (label, completed) "  \
+                    "VALUES ('Learn C++', 1); " \
+                    "INSERT INTO todos (label, completed) "  \
+                    "VALUES ('Learn Djinni', 1); "     \
+                    "INSERT INTO todos (label, completed)" \
+                    "VALUES ('Write Some Tutorials', 1);" \
+                    "INSERT INTO todos (label, completed)" \
+                    "VALUES ('Build Some Apps', 0);" \
+                    "INSERT INTO todos (label, completed)" \
+                    "VALUES ('Profit', 0);";
                 _handle_query(sql);
             }
         }

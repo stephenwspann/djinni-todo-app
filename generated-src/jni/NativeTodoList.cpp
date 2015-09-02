@@ -5,7 +5,6 @@
 #include "Marshal.hpp"
 #include "NativeTodo.hpp"
 #include "NativeTodoList.hpp"
-#include "NativeTodoStatus.hpp"
 
 namespace djinni_generated {
 
@@ -51,13 +50,13 @@ CJNIEXPORT jint JNICALL Java_com_mycompany_todolist_TodoList_00024CppProxy_nativ
     } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, 0 /* value doesn't matter */)
 }
 
-CJNIEXPORT jboolean JNICALL Java_com_mycompany_todolist_TodoList_00024CppProxy_native_1updateTodoStatus(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef, jint j_id, jobject j_status)
+CJNIEXPORT jboolean JNICALL Java_com_mycompany_todolist_TodoList_00024CppProxy_native_1updateTodoCompleted(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef, jint j_id, jint j_completed)
 {
     try {
         DJINNI_FUNCTION_PROLOGUE1(jniEnv, nativeRef);
         const auto& ref = ::djinni::CppProxyHandle<::todolist::TodoList>::get(nativeRef);
-        auto r = ref->update_todo_status(::djinni::I32::toCpp(jniEnv, j_id),
-                                         ::djinni_generated::NativeTodoStatus::toCpp(jniEnv, j_status));
+        auto r = ref->update_todo_completed(::djinni::I32::toCpp(jniEnv, j_id),
+                                            ::djinni::I32::toCpp(jniEnv, j_completed));
         return ::djinni::release(::djinni::Bool::fromCpp(jniEnv, r));
     } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, 0 /* value doesn't matter */)
 }

@@ -3,7 +3,6 @@
 
 #pragma once
 
-#include "todo_status.hpp"
 #include <cstdint>
 #include <string>
 #include <utility>
@@ -13,14 +12,14 @@ namespace todolist {
 struct Todo final {
     int32_t id;
     std::string label;
-    TodoStatus status;
+    int32_t completed;
 
     Todo(int32_t id,
          std::string label,
-         TodoStatus status)
+         int32_t completed)
     : id(std::move(id))
     , label(std::move(label))
-    , status(std::move(status))
+    , completed(std::move(completed))
     {}
 };
 

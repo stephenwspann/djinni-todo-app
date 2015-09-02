@@ -31,7 +31,6 @@
 		F1C2DF251B9641FA006BDDC1 /* todo_list_impl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = todo_list_impl.cpp; path = ../../../src/todo_list_impl.cpp; sourceTree = "<group>"; };
 		F1C2DF261B9641FA006BDDC1 /* todo_list_impl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = todo_list_impl.hpp; path = ../../../src/todo_list_impl.hpp; sourceTree = "<group>"; };
 		F1C2DF281B96421F006BDDC1 /* todo_list.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = todo_list.hpp; path = "../../../generated-src/cpp/todo_list.hpp"; sourceTree = "<group>"; };
-		F1C2DF291B9652EB006BDDC1 /* todo_status.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = todo_status.hpp; path = "../../../generated-src/cpp/todo_status.hpp"; sourceTree = "<group>"; };
 		F1C2DF2A1B9652EB006BDDC1 /* todo.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = todo.hpp; path = "../../../generated-src/cpp/todo.hpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,7 +66,6 @@
 		F1C2DF1B1B962E48006BDDC1 /* TodoApp */ = {
 			isa = PBXGroup;
 			children = (
-				F1C2DF291B9652EB006BDDC1 /* todo_status.hpp */,
 				F1C2DF2A1B9652EB006BDDC1 /* todo.hpp */,
 				F1C2DF281B96421F006BDDC1 /* todo_list.hpp */,
 				F1C2DF251B9641FA006BDDC1 /* todo_list_impl.cpp */,

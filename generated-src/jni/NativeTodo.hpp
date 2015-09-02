@@ -25,10 +25,10 @@ private:
     friend ::djinni::JniClass<NativeTodo>;
 
     const ::djinni::GlobalRef<jclass> clazz { ::djinni::jniFindClass("com/mycompany/todolist/Todo") };
-    const jmethodID jconstructor { ::djinni::jniGetMethodID(clazz.get(), "<init>", "(ILjava/lang/String;Lcom/mycompany/todolist/TodoStatus;)V") };
+    const jmethodID jconstructor { ::djinni::jniGetMethodID(clazz.get(), "<init>", "(ILjava/lang/String;I)V") };
     const jfieldID field_mId { ::djinni::jniGetFieldID(clazz.get(), "mId", "I") };
     const jfieldID field_mLabel { ::djinni::jniGetFieldID(clazz.get(), "mLabel", "Ljava/lang/String;") };
-    const jfieldID field_mStatus { ::djinni::jniGetFieldID(clazz.get(), "mStatus", "Lcom/mycompany/todolist/TodoStatus;") };
+    const jfieldID field_mCompleted { ::djinni::jniGetFieldID(clazz.get(), "mCompleted", "I") };
 };
 
 }  // namespace djinni_generated

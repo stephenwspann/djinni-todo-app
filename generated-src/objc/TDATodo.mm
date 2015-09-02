@@ -8,23 +8,23 @@
 
 - (nonnull instancetype)initWithId:(int32_t)id
                              label:(nonnull NSString *)label
-                            status:(TDATodoStatus)status
+                         completed:(int32_t)completed
 {
     if (self = [super init]) {
         _id = id;
         _label = [label copy];
-        _status = status;
+        _completed = completed;
     }
     return self;
 }
 
 + (nonnull instancetype)todoWithId:(int32_t)id
                              label:(nonnull NSString *)label
-                            status:(TDATodoStatus)status
+                         completed:(int32_t)completed
 {
     return [[self alloc] initWithId:id
                               label:label
-                             status:status];
+                          completed:completed];
 }
 
 @end

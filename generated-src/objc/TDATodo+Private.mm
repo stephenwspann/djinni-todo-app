@@ -12,14 +12,14 @@ auto Todo::toCpp(ObjcType obj) -> CppType
     assert(obj);
     return {::djinni::I32::toCpp(obj.id),
             ::djinni::String::toCpp(obj.label),
-            ::djinni::Enum<::todolist::TodoStatus, TDATodoStatus>::toCpp(obj.status)};
+            ::djinni::I32::toCpp(obj.completed)};
 }
 
 auto Todo::fromCpp(const CppType& cpp) -> ObjcType
 {
     return [[TDATodo alloc] initWithId:(::djinni::I32::fromCpp(cpp.id))
                                  label:(::djinni::String::fromCpp(cpp.label))
-                                status:(::djinni::Enum<::todolist::TodoStatus, TDATodoStatus>::fromCpp(cpp.status))];
+                             completed:(::djinni::I32::fromCpp(cpp.completed))];
 }
 
 }  // namespace djinni_generated

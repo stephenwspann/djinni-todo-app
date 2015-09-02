@@ -9,11 +9,7 @@
 void print_todos(todolist::TodoListImpl tdl) {
     std::vector<todolist::Todo> todos = tdl.get_todos();
     for (auto & element : todos) {
-        std::string status = "INCOMPLETE";
-        if (element.status == todolist::TodoStatus::COMPLETE) {
-            status = "COMPLETE";
-        }
-        std::cout << element.id << ". " << element.label << " (" << status << ")\n";
+        std::cout << element.id << ". " << element.label << " (" << element.completed << ")\n";
     }
 }
 
@@ -35,8 +31,7 @@ int main(int argc, char **argv){
     print_todos(tdl);
     
     // update the new thing's status to complete
-    todolist::TodoStatus myStatus = todolist::TodoStatus::COMPLETE;
-    tdl.update_todo_status(newId, myStatus);
+    tdl.update_todo_completed(newId, 1);
     
     // show updated todos
     std::cout << "\nTodo Completed:\n";

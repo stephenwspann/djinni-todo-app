@@ -4,7 +4,6 @@
 #pragma once
 
 #include "todo.hpp"
-#include "todo_status.hpp"
 #include <cstdint>
 #include <memory>
 #include <string>
@@ -22,7 +21,7 @@ public:
 
     virtual int32_t add_todo(const std::string & label) = 0;
 
-    virtual bool update_todo_status(int32_t id, TodoStatus status) = 0;
+    virtual bool update_todo_completed(int32_t id, int32_t completed) = 0;
 
     virtual bool delete_todo(int32_t id) = 0;
 };

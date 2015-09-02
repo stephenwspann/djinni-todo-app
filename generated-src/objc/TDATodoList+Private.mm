@@ -52,11 +52,11 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (BOOL)updateTodoStatus:(int32_t)id
-                  status:(TDATodoStatus)status {
+- (BOOL)updateTodoCompleted:(int32_t)id
+                  completed:(int32_t)completed {
     try {
-        auto r = _cppRef.get()->update_todo_status(::djinni::I32::toCpp(id),
-                                                   ::djinni::Enum<::todolist::TodoStatus, TDATodoStatus>::toCpp(status));
+        auto r = _cppRef.get()->update_todo_completed(::djinni::I32::toCpp(id),
+                                                      ::djinni::I32::toCpp(completed));
         return ::djinni::Bool::fromCpp(r);
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }

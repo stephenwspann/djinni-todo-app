@@ -11,7 +11,7 @@ public abstract class TodoList {
 
     public abstract int addTodo(String label);
 
-    public abstract boolean updateTodoStatus(int id, TodoStatus status);
+    public abstract boolean updateTodoCompleted(int id, int completed);
 
     public abstract boolean deleteTodo(int id);
 
@@ -57,12 +57,12 @@ public abstract class TodoList {
         private native int native_addTodo(long _nativeRef, String label);
 
         @Override
-        public boolean updateTodoStatus(int id, TodoStatus status)
+        public boolean updateTodoCompleted(int id, int completed)
         {
             assert !this.destroyed.get() : "trying to use a destroyed object";
-            return native_updateTodoStatus(this.nativeRef, id, status);
+            return native_updateTodoCompleted(this.nativeRef, id, completed);
         }
-        private native boolean native_updateTodoStatus(long _nativeRef, int id, TodoStatus status);
+        private native boolean native_updateTodoCompleted(long _nativeRef, int id, int completed);
 
         @Override
         public boolean deleteTodo(int id)

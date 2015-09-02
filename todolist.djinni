@@ -1,18 +1,13 @@
-todo_status = enum {
-    complete;
-    incomplete;
-}
-
 todo = record {
     id: i32;
     label: string;
-    status: todo_status;
+    completed: i32;
 }
 
 todo_list = interface +c {
     static create(): todo_list;
     get_todos(): list<todo>;
     add_todo(label: string): i32;
-    update_todo_status(id: i32, status: todo_status): bool;
+    update_todo_completed(id: i32, completed: i32): bool;
     delete_todo(id: i32): bool;
 }

@@ -3,7 +3,6 @@
 
 #include "NativeTodo.hpp"  // my header
 #include "Marshal.hpp"
-#include "NativeTodoStatus.hpp"
 
 namespace djinni_generated {
 
@@ -16,7 +15,7 @@ auto NativeTodo::fromCpp(JNIEnv* jniEnv, const CppType& c) -> ::djinni::LocalRef
     auto r = ::djinni::LocalRef<JniType>{jniEnv->NewObject(data.clazz.get(), data.jconstructor,
                                                            ::djinni::get(::djinni::I32::fromCpp(jniEnv, c.id)),
                                                            ::djinni::get(::djinni::String::fromCpp(jniEnv, c.label)),
-                                                           ::djinni::get(::djinni_generated::NativeTodoStatus::fromCpp(jniEnv, c.status)))};
+                                                           ::djinni::get(::djinni::I32::fromCpp(jniEnv, c.completed)))};
     ::djinni::jniExceptionCheck(jniEnv);
     return r;
 }
@@ -27,7 +26,7 @@ auto NativeTodo::toCpp(JNIEnv* jniEnv, JniType j) -> CppType {
     const auto& data = ::djinni::JniClass<NativeTodo>::get();
     return {::djinni::I32::toCpp(jniEnv, jniEnv->GetIntField(j, data.field_mId)),
             ::djinni::String::toCpp(jniEnv, (jstring)jniEnv->GetObjectField(j, data.field_mLabel)),
-            ::djinni_generated::NativeTodoStatus::toCpp(jniEnv, jniEnv->GetObjectField(j, data.field_mStatus))};
+            ::djinni::I32::toCpp(jniEnv, jniEnv->GetIntField(j, data.field_mCompleted))};
 }
 
 }  // namespace djinni_generated

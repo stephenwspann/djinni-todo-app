@@ -10,15 +10,15 @@ public final class Todo {
 
     /*package*/ final String mLabel;
 
-    /*package*/ final TodoStatus mStatus;
+    /*package*/ final int mCompleted;
 
     public Todo(
             int id,
             String label,
-            TodoStatus status) {
+            int completed) {
         this.mId = id;
         this.mLabel = label;
-        this.mStatus = status;
+        this.mCompleted = completed;
     }
 
     public int getId() {
@@ -29,7 +29,7 @@ public final class Todo {
         return mLabel;
     }
 
-    public TodoStatus getStatus() {
-        return mStatus;
+    public int getCompleted() {
+        return mCompleted;
     }
 }
