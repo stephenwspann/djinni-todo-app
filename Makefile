@@ -1,17 +1,6 @@
-gyp: ./deps/gyp
-
-./deps/gyp:
-	git submodule update --init
-
-./deps/djinni:
-	git submodule update --init
-
-djinni-output-temp/gen.stamp mx3.cidl:
-	./run_djinni.sh
-
-./build_ios/libtodoapp.xcodeproj: libtodoapp.gyp ./deps/djinni/support-lib/support_lib.gyp todoapp.djinni
+./build_ios/libtodoapp.xcodeproj: libtodoapp.gyp ./deps/djinni/support-lib/support_lib.gyp todolist.djinni
 	sh ./run_djinni.sh
-	deps/gyp/gyp --depth=. -f xcode -DOS=ios --generator-output=./build_ios -Ideps/djinni/common.gypi ./libtodoapp.gyp
+	deps/gyp/gyp --depth=. -f xcode -DOS=ios --generator-output ./build_ios -Ideps/djinni/common.gypi ./libtodoapp.gyp
 
 ios: ./build_ios/libtodoapp.xcodeproj
 	xcodebuild -workspace ios_project/TodoApp.xcworkspace \
