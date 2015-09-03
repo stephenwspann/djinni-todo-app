@@ -22,8 +22,12 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		07549D2B7FADD96E97974414 /* TDATodo.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0FF79751F0D5B0CADAE03514 /* TDATodo.mm */; };
+		55BEED02E7DD756BC6DCB7E8 /* TDATodoList+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = 651E04F81E1096028B0D7D44 /* TDATodoList+Private.mm */; };
+		74183CC3AC9FEB6D6AD90FB0 /* TDATodo+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5B33272B5501A73B79A54796 /* TDATodo+Private.mm */; };
 		76CA062D48CCE30FE0BFB878 /* libsqlite3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC71A0EE582D9EEA90D44254 /* libsqlite3.a */; };
 		77CFDD6AFEF72C73206B6E97 /* libdjinni_jni.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CEF27A67FEDB5F3CF0B4E48 /* libdjinni_jni.a */; };
+		95968C1FCE7D1E655C11C54A /* todo_list_impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 710A74D3AAB2B576E482F7CC /* todo_list_impl.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,9 +84,13 @@
 
 /* Begin PBXFileReference section */
 		05981DF8B344A7387465BEC9 /* libtodoapp.gyp */ = {isa = PBXFileReference; explicitFileType = sourcecode; path = libtodoapp.gyp; sourceTree = "<group>"; };
+		0FF79751F0D5B0CADAE03514 /* TDATodo.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = TDATodo.mm; sourceTree = "<group>"; };
 		119C56FE81E0CF3B73B3D5EE /* libtodoapp_android.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libtodoapp_android.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		440782521E4D066D386E5A29 /* common.gypi */ = {isa = PBXFileReference; explicitFileType = sourcecode; name = common.gypi; path = deps/djinni/common.gypi; sourceTree = "<group>"; };
 		59A56DF0330D447C05D9594A /* libtodoapp_objc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtodoapp_objc.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B33272B5501A73B79A54796 /* TDATodo+Private.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "TDATodo+Private.mm"; sourceTree = "<group>"; };
+		651E04F81E1096028B0D7D44 /* TDATodoList+Private.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "TDATodoList+Private.mm"; sourceTree = "<group>"; };
+		710A74D3AAB2B576E482F7CC /* todo_list_impl.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = todo_list_impl.cpp; sourceTree = "<group>"; };
 		9669C0E586B57BD5A7266205 /* support_lib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = support_lib.xcodeproj; path = "build_ios/deps/djinni/support-lib/support_lib.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		BD1C39CAFA2A63E5CBC4D51A /* sqlite3.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = sqlite3.xcodeproj; path = build_ios/deps/sqlite3.xcodeproj; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -124,6 +132,15 @@
 			name = Build;
 			sourceTree = "<group>";
 		};
+		3106335C972455EBBEB78430 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				45AD9B1A7C5F07254DCE47DA /* generated-src/objc */,
+				EEB93363055CBF6CD6C35C5C /* src */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
 		312232D624617B199BAD5126 /* Projects */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +148,16 @@
 				9669C0E586B57BD5A7266205 /* support_lib.xcodeproj */,
 			);
 			name = Projects;
+			sourceTree = "<group>";
+		};
+		45AD9B1A7C5F07254DCE47DA /* generated-src/objc */ = {
+			isa = PBXGroup;
+			children = (
+				5B33272B5501A73B79A54796 /* TDATodo+Private.mm */,
+				0FF79751F0D5B0CADAE03514 /* TDATodo.mm */,
+				651E04F81E1096028B0D7D44 /* TDATodoList+Private.mm */,
+			);
+			path = "generated-src/objc";
 			sourceTree = "<group>";
 		};
 		854E6BFB035864497F2621CA /* Products */ = {
@@ -151,13 +178,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C789C7317F86666B06A3D22A = {
+		EA414D55634D67A1500E7C9F = {
 			isa = PBXGroup;
 			children = (
+				3106335C972455EBBEB78430 /* Source */,
 				312232D624617B199BAD5126 /* Projects */,
 				854E6BFB035864497F2621CA /* Products */,
 				2B68F2FC235835FF9EF2CF8F /* Build */,
 			);
+			sourceTree = "<group>";
+		};
+		EEB93363055CBF6CD6C35C5C /* src */ = {
+			isa = PBXGroup;
+			children = (
+				710A74D3AAB2B576E482F7CC /* todo_list_impl.cpp */,
+			);
+			path = src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,7 +244,7 @@
 			buildConfigurationList = D7488850FB340CBC0F8B4FF4 /* Build configuration list for PBXProject "libtodoapp" */;
 			compatibilityVersion = "Xcode 3.2";
 			hasScannedForEncodings = 1;
-			mainGroup = C789C7317F86666B06A3D22A;
+			mainGroup = EA414D55634D67A1500E7C9F;
 			projectDirPath = ..;
 			projectReferences = (
 				{
@@ -265,6 +301,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74183CC3AC9FEB6D6AD90FB0 /* TDATodo+Private.mm in Sources */,
+				07549D2B7FADD96E97974414 /* TDATodo.mm in Sources */,
+				55BEED02E7DD756BC6DCB7E8 /* TDATodoList+Private.mm in Sources */,
+				95968C1FCE7D1E655C11C54A /* todo_list_impl.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,8 +344,9 @@
 				EXECUTABLE_PREFIX = lib;
 				GCC_PREPROCESSOR_DEFINITIONS = "NDEBUG=1";
 				HEADER_SEARCH_PATHS = (
-					include,
-					objc,
+					"generated-src/objc",
+					"generated-src/cpp",
+					src,
 					deps,
 					deps/sqlite3,
 					"deps/djinni/support-lib/objc",
@@ -410,8 +451,9 @@
 				EXECUTABLE_PREFIX = lib;
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
 				HEADER_SEARCH_PATHS = (
-					include,
-					objc,
+					"generated-src/objc",
+					"generated-src/cpp",
+					src,
 					deps,
 					deps/sqlite3,
 					"deps/djinni/support-lib/objc",
