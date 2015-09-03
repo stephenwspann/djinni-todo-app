@@ -16,7 +16,7 @@ void print_todos(todolist::TodoListImpl tdl) {
 int main(int argc, char **argv){
     
     // instantiate our C++ implementation
-    todolist::TodoListImpl tdl = todolist::TodoListImpl();
+    todolist::TodoListImpl tdl = todolist::TodoListImpl(".");
     
     // print the initial list
     std::cout << "Initial Todos:\n";

@@ -8,7 +8,7 @@
 
 @interface TDATodoList : NSObject
 
-+ (nullable TDATodoList *)create;
++ (nullable TDATodoList *)createWithPath:(nonnull NSString *)path;
 
 - (nonnull NSArray *)getTodos;
 

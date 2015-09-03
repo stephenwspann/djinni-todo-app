@@ -15,7 +15,7 @@ class TodoList {
 public:
     virtual ~TodoList() {}
 
-    static std::shared_ptr<TodoList> create();
+    static std::shared_ptr<TodoList> create_with_path(const std::string & path);
 
     virtual std::vector<Todo> get_todos() = 0;
 

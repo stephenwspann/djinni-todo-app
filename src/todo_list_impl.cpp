@@ -6,17 +6,20 @@
   
 namespace todolist {
     
+    std::string _path;
     sqlite3 *db;
     char *zErrMsg = 0;
     int rc;
     std::string sql;
     sqlite3_stmt *statement;
   
-    std::shared_ptr<TodoList> TodoList::create() {
-        return std::make_shared<TodoListImpl>();
+    std::shared_ptr<TodoList> TodoList::create_with_path(const std::string & path) {
+        return std::make_shared<TodoListImpl>(path);
     }
     
-    TodoListImpl::TodoListImpl() {
+    TodoListImpl::TodoListImpl(const std::string & path) {
+        _path = path + "/todo.db";
+        //std::cout << "setting db path as " << _path;
         _setup_db();
     }
   
@@ -88,9 +91,19 @@ namespace todolist {
         
     }
     
+    static int callback(void *NotUsed, int argc, char **argv, char **azColName){
+        int i;
+        for(i=0; i<argc; i++){
+            printf("%s = %s\n", azColName[i], argv[i] ? argv[i] : "NULL");
+        }
+        printf("\n");
+        return 0;
+    }
+    
     // wrapper to handle errors, etc on simple queries
     void TodoListImpl::_handle_query(std::string sql) {
-        rc = sqlite3_exec(db, sql.c_str(), 0, 0, &zErrMsg);
+        std::cout << "handle_query\n";
+        rc = sqlite3_exec(db, sql.c_str(), callback, 0, &zErrMsg);
         if(rc != SQLITE_OK){
             fprintf(stderr, "SQL error: %s\n", zErrMsg);
             sqlite3_free(zErrMsg);
@@ -101,7 +114,7 @@ namespace todolist {
     void TodoListImpl::_setup_db() {
         
         // open the database, create it if necessary
-        rc = sqlite3_open_v2("todo.db", &db, SQLITE_OPEN_READWRITE | SQLITE_OPEN_CREATE, NULL);
+        rc = sqlite3_open_v2(_path.c_str(), &db, SQLITE_OPEN_READWRITE | SQLITE_OPEN_CREATE, NULL);
         if(rc){
             fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
             sqlite3_close(db);
@@ -117,6 +130,7 @@ namespace todolist {
         
         // check if table is empty... if so, add some data.
         sql = "SELECT * FROM todos";
+        _handle_query(sql);
         if(sqlite3_prepare_v2(db, sql.c_str(), (sizeof(sql)+1), &statement, 0) == SQLITE_OK) {
             int stat = sqlite3_step(statement);
             if (stat == SQLITE_DONE) {
@@ -132,7 +146,13 @@ namespace todolist {
                     "INSERT INTO todos (label, completed)" \
                     "VALUES ('Profit', 0);";
                 _handle_query(sql);
+            } else {
+                std::cout << "didn't add data to db\n";
             }
+        } else {
+            int error = sqlite3_step(statement);
+            std::cout << "SQLITE not ok, error was " << error << "\n";
+            
         }
         sqlite3_finalize(statement);
         

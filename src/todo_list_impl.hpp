@@ -9,7 +9,7 @@ namespace todolist {
     public:
  
         // Constructor
-        TodoListImpl();
+        TodoListImpl(const std::string & path);
         
         // Database functions we need to implement in C++
         std::vector<Todo> get_todos();

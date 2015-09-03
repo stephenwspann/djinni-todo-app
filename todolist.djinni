@@ -5,7 +5,7 @@ todo = record {
 }
 
 todo_list = interface +c {
-    static create(): todo_list;
+    static create_with_path(path: string): todo_list;
     get_todos(): list<todo>;
     add_todo(label: string): i32;
     update_todo_completed(id: i32, completed: i32): bool;

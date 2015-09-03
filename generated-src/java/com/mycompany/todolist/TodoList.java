@@ -15,7 +15,7 @@ public abstract class TodoList {
 
     public abstract boolean deleteTodo(int id);
 
-    public static native TodoList create();
+    public static native TodoList createWithPath(String path);
 
     private static final class CppProxy extends TodoList
     {

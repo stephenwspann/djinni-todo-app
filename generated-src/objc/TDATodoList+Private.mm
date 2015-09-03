@@ -31,9 +31,9 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     return self;
 }
 
-+ (nullable TDATodoList *)create {
++ (nullable TDATodoList *)createWithPath:(nonnull NSString *)path {
     try {
-        auto r = ::todolist::TodoList::create();
+        auto r = ::todolist::TodoList::create_with_path(::djinni::String::toCpp(path));
         return ::djinni_generated::TodoList::fromCpp(r);
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
