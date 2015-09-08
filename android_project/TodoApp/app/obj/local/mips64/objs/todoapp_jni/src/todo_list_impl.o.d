@@ -95,8 +95,7 @@
  /Users/stephenspann/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/include/memory.h \
  /Users/stephenspann/Library/Android/sdk/ndk-bundle/sources/cxx-stl/llvm-libc++/../../android/support/include/nl_types.h \
  /Users/stephenspann/Library/Android/sdk/ndk-bundle/sources/cxx-stl/llvm-libc++/libcxx/include/bitset \
- ../../../deps/sqlite3/sqlite3.h \
- /Users/stephenspann/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/include/android/log.h
+ ../../../deps/sqlite3/sqlite3.h
 
 ../../../src/todo_list_impl.hpp:
 
@@ -291,5 +290,3 @@
 /Users/stephenspann/Library/Android/sdk/ndk-bundle/sources/cxx-stl/llvm-libc++/libcxx/include/bitset:
 
 ../../../deps/sqlite3/sqlite3.h:
-
-/Users/stephenspann/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/include/android/log.h:
