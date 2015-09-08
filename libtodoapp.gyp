@@ -19,28 +19,24 @@
       ]
     },
     {
-      "target_name": "libtodoapp_android",
-      "android_unmangled_name": 1,
+      "target_name": "libtodoapp_jni",
       "type": "shared_library",
       "dependencies": [
         "deps/djinni/support-lib/support_lib.gyp:djinni_jni",
         "deps/sqlite3.gyp:sqlite3",
       ],
-      "ldflags" : [ "-llog" ],
+      "ldflags" : [ "-llog", "-Wl,--build-id,--gc-sections,--exclude-libs,ALL" ],
       "sources": [
-        "<!@(python deps/djinni/example/glob.py android/jni *.cpp *.hpp)",
-        "<!@(python deps/djinni/example/glob.py android/jni_gen *.cpp *.hpp)",
+        "./deps/djinni/support-lib/jni/djinni_main.cpp",
+        "<!@(python deps/djinni/example/glob.py generated-src/jni   '*.cpp')",
+        "<!@(python deps/djinni/example/glob.py generated-src/cpp   '*.cpp')",
+        "<!@(python deps/djinni/example/glob.py src '*.cpp')",
       ],
       "include_dirs": [
-        "include",
-        "src/interface",
+        "generated-src/jni",
+        "generated-src/cpp",
+        "src",
       ],
-      "all_dependent_settings": {
-        "include_dirs": [
-          "include",
-          "src/interface",
-        ],
-      },
     },
   ],
 }
