@@ -16,3 +16,5 @@ android: GypAndroid.mk
 	cd android_project/TodoApp/ && ./gradlew app:assembleDebug
 	@echo "Apks produced at:"
 	@python deps/djinni/example/glob.py ./ '*.apk'
+
+sqlite: ./build_ios/libtodoapp.xcodeproj
