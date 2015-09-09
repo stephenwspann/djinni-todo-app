@@ -20,6 +20,4 @@
         android:id="@android:id/list"
         android:background="#ffffff" />
 
-
-
 </RelativeLayout>
