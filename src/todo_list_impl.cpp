@@ -19,7 +19,6 @@ namespace todolist {
     
     TodoListImpl::TodoListImpl(const std::string & path) {
         _path = path + "/todo.db";
-        //std::cout << "setting db path as " << _path;
         _setup_db();
     }
   
@@ -91,19 +90,9 @@ namespace todolist {
         
     }
     
-    static int callback(void *NotUsed, int argc, char **argv, char **azColName){
-        int i;
-        for(i=0; i<argc; i++){
-            printf("%s = %s\n", azColName[i], argv[i] ? argv[i] : "NULL");
-        }
-        printf("\n");
-        return 0;
-    }
-    
     // wrapper to handle errors, etc on simple queries
     void TodoListImpl::_handle_query(std::string sql) {
-        std::cout << "handle_query\n";
-        rc = sqlite3_exec(db, sql.c_str(), callback, 0, &zErrMsg);
+        rc = sqlite3_exec(db, sql.c_str(), 0, 0, &zErrMsg);
         if(rc != SQLITE_OK){
             fprintf(stderr, "SQL error: %s\n", zErrMsg);
             sqlite3_free(zErrMsg);
