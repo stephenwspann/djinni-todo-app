@@ -8,12 +8,11 @@ ios: ./build_ios/libtodoapp.xcodeproj
 		-configuration 'Debug' \
 		-sdk iphonesimulator
 
-# This file needs to be manually configured per system.
-example_android/local.properties:
-	@echo "Android SDK and NDK not properly configured, please create a example_android/local.properties file." && false
+GypAndroid.mk: libtodoapp.gyp ./deps/djinni/support-lib/support_lib.gyp todolist.djinni
+	sh ./run_djinni.sh
+	ANDROID_BUILD_TOP=$(shell dirname `which ndk-build`) deps/gyp/gyp --depth=. -f android -DOS=android -Ideps/djinni/common.gypi ./libtodoapp.gyp --root-target=libtodoapp_jni
 
-GypAndroid.mk: deps/gyp deps/json11 mx3.gyp djinni
-	ANDROID_BUILD_TOP=dirname PYTHONPATH=deps/gyp/pylib $(which ndk-build) deps/gyp/gyp --depth=. -f android -DOS=android --root-target libmx3_android -Icommon.gypi mx3.gyp
-
-android: GypAndroid.mk example_android/local.properties
-	cd example_android && ./gradlew app:assembleDebug && cd ..
+android: GypAndroid.mk
+	cd android_project/TodoApp/ && ./gradlew app:assembleDebug
+	@echo "Apks produced at:"
+	@python deps/djinni/example/glob.py ./ '*.apk'
