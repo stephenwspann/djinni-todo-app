@@ -1,34 +1,37 @@
-#import "MasterViewController.h"
-#import "DetailViewController.h"
+#import "ViewController.h"
 #import "TDATodoList.h"
 
-@interface MasterViewController ()
+@interface ViewController ()
 
 @property NSMutableArray *objects;
 @end
 
-@implementation MasterViewController {
+@implementation ViewController {
     TDATodoList *_todoInterface;
     NSMutableArray *_todos;
     int _newTodoCount;
-}
-
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        self.clearsSelectionOnViewWillAppear = NO;
-        self.preferredContentSize = CGSizeMake(320.0, 600.0);
-    }
+    UITableView *_tableView;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
-    self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    
+    UIButton *addButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [addButton addTarget:self
+               action:@selector(insertNewObject:)
+     forControlEvents:UIControlEventTouchUpInside];
+    [addButton setTitle:@"Add Todo" forState:UIControlStateNormal];
+    addButton.frame = CGRectMake(20.0, 20.0, 160.0, 40.0);
+    [self.view addSubview:addButton];
+    
+    // instantiate our table view
+    CGRect fr = CGRectMake(0, 65, 320, 415);
+    _tableView = [[UITableView alloc] initWithFrame:fr style:UITableViewStylePlain];
+    _tableView.dataSource = self;
+    _tableView.delegate = self;
+    [self.view addSubview:_tableView];
     
     // instantiate our Todo Library Interface with correct path
     NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
@@ -51,25 +54,12 @@
     if (!_todos) {
         _todos = [[NSMutableArray alloc] initWithArray:[_todoInterface getTodos]];
     }
-
+    
     NSString *newTodoLabel = [NSString stringWithFormat:@"New Todo %d", _newTodoCount];
     [_todoInterface addTodo:newTodoLabel];
     _todos = [[NSMutableArray alloc] initWithArray:[_todoInterface getTodos]];
-    [self.tableView reloadData];
+    [_tableView reloadData];
     _newTodoCount++;
-}
-
-#pragma mark - Segues
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = self.objects[indexPath.row];
-        DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
-        [controller setDetailItem:object];
-        controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
-        controller.navigationItem.leftItemsSupplementBackButton = YES;
-    }
 }
 
 #pragma mark - Table View
@@ -84,7 +74,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier: @"Cell"];
+    }
     
     TDATodo *todo = _todos[indexPath.row];
     
@@ -114,7 +107,7 @@
     }
     // get new data from database and update the table view
     _todos = [[NSMutableArray alloc] initWithArray:[_todoInterface getTodos]];
-    [self.tableView reloadData];
+    [_tableView reloadData];
     
 }
 
@@ -131,7 +124,7 @@
         NSLog(@"delete %d", dbRow);
         [_todoInterface deleteTodo:dbRow];
         _todos = [[NSMutableArray alloc] initWithArray:[_todoInterface getTodos]];
-        [self.tableView reloadData];
+        [_tableView reloadData];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }
