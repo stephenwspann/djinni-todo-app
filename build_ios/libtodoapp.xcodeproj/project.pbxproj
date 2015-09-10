@@ -14,7 +14,7 @@
 			);
 			dependencies = (
 				3D351A004A764F1F95772372 /* PBXTargetDependency */,
-				099F6F7C8A20CBC8F08E65E6 /* PBXTargetDependency */,
+				0B9F2CAB027CB514DF1B8F8C /* PBXTargetDependency */,
 			);
 			name = All;
 			productName = All;
@@ -22,22 +22,19 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		07549D2B7FADD96E97974414 /* TDATodo.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0FF79751F0D5B0CADAE03514 /* TDATodo.mm */; };
-		55BEED02E7DD756BC6DCB7E8 /* TDATodoList+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = 651E04F81E1096028B0D7D44 /* TDATodoList+Private.mm */; };
-		74183CC3AC9FEB6D6AD90FB0 /* TDATodo+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5B33272B5501A73B79A54796 /* TDATodo+Private.mm */; };
-		76CA062D48CCE30FE0BFB878 /* libsqlite3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC71A0EE582D9EEA90D44254 /* libsqlite3.a */; };
-		77CFDD6AFEF72C73206B6E97 /* libdjinni_jni.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CEF27A67FEDB5F3CF0B4E48 /* libdjinni_jni.a */; };
-		95968C1FCE7D1E655C11C54A /* todo_list_impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 710A74D3AAB2B576E482F7CC /* todo_list_impl.cpp */; };
+		0C4E0F9A835B3FC6D26289A1 /* libsqlite3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC71A0EE582D9EEA90D44254 /* libsqlite3.a */; };
+		0EEE89C452F32D1F2A8AAF71 /* libdjinni_jni.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CEF27A67FEDB5F3CF0B4E48 /* libdjinni_jni.a */; };
+		1B493E0DDA47679F3A9C23EB /* NativeTodo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8389F9042520B702AEC301ED /* NativeTodo.cpp */; };
+		99608618FECBEA1E591C6722 /* TDATodo+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5B33272B5501A73B79A54796 /* TDATodo+Private.mm */; };
+		BC286F54213F324A80629105 /* djinni_main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C60723BEA664933B5ED0BA6C /* djinni_main.cpp */; };
+		C50EED03ADD7CCF096AB514F /* TDATodo.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0FF79751F0D5B0CADAE03514 /* TDATodo.mm */; };
+		CEF9700CD514FCCB12F2FA36 /* todo_list_impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 710A74D3AAB2B576E482F7CC /* todo_list_impl.cpp */; };
+		D6A341C28F8B42934FC09A25 /* TDATodoList+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = 651E04F81E1096028B0D7D44 /* TDATodoList+Private.mm */; };
+		DFA8F3D4B868E28709C86D01 /* NativeTodoList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 56704A50862D740C379B5A7A /* NativeTodoList.cpp */; };
+		FFEDE116F928FE622E07F427 /* todo_list_impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 710A74D3AAB2B576E482F7CC /* todo_list_impl.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		14216CDBBEEC3F6D3EE10B4A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9669C0E586B57BD5A7266205 /* support_lib.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = AD97C5F2356EF26110758A40;
-			remoteInfo = djinni_jni;
-		};
 		19135B900E196E5C2A8096C6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9669C0E586B57BD5A7266205 /* support_lib.xcodeproj */;
@@ -45,12 +42,26 @@
 			remoteGlobalIDString = 0C99AA4F95316AA552A79C55;
 			remoteInfo = djinni_objc;
 		};
-		821AF09ABBFDC16F99255851 /* PBXContainerItemProxy */ = {
+		44F3932E84E6E35E1E94CC49 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BD1C39CAFA2A63E5CBC4D51A /* sqlite3.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 7E8C0CF30B4F67B456B17551;
 			remoteInfo = sqlite3;
+		};
+		71DA340379E10911D9084D84 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11797AFFD96381C291F54D9D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 833FC42492E9EA882FC12A10;
+			remoteInfo = libtodoapp_jni;
+		};
+		865C408CEDB482338BB5628A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9669C0E586B57BD5A7266205 /* support_lib.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = AD97C5F2356EF26110758A40;
+			remoteInfo = djinni_jni;
 		};
 		A3F597F9754465A86A64CD5A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -66,13 +77,6 @@
 			remoteGlobalIDString = DC658C749F521B13A5BDCBBC;
 			remoteInfo = djinni_jni;
 		};
-		E9840981B4831BCE90920118 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 11797AFFD96381C291F54D9D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F159F96B391BF0243E8A98D9;
-			remoteInfo = libtodoapp_android;
-		};
 		F0840CA7C1C07C6AE12B068B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BD1C39CAFA2A63E5CBC4D51A /* sqlite3.xcodeproj */;
@@ -84,31 +88,34 @@
 
 /* Begin PBXFileReference section */
 		05981DF8B344A7387465BEC9 /* libtodoapp.gyp */ = {isa = PBXFileReference; explicitFileType = sourcecode; path = libtodoapp.gyp; sourceTree = "<group>"; };
+		0EEAB16E847367051FD0912C /* libtodoapp_jni.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libtodoapp_jni.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FF79751F0D5B0CADAE03514 /* TDATodo.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = TDATodo.mm; sourceTree = "<group>"; };
-		119C56FE81E0CF3B73B3D5EE /* libtodoapp_android.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libtodoapp_android.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		440782521E4D066D386E5A29 /* common.gypi */ = {isa = PBXFileReference; explicitFileType = sourcecode; name = common.gypi; path = deps/djinni/common.gypi; sourceTree = "<group>"; };
+		56704A50862D740C379B5A7A /* NativeTodoList.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NativeTodoList.cpp; sourceTree = "<group>"; };
 		59A56DF0330D447C05D9594A /* libtodoapp_objc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtodoapp_objc.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B33272B5501A73B79A54796 /* TDATodo+Private.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "TDATodo+Private.mm"; sourceTree = "<group>"; };
 		651E04F81E1096028B0D7D44 /* TDATodoList+Private.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "TDATodoList+Private.mm"; sourceTree = "<group>"; };
 		710A74D3AAB2B576E482F7CC /* todo_list_impl.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = todo_list_impl.cpp; sourceTree = "<group>"; };
+		8389F9042520B702AEC301ED /* NativeTodo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NativeTodo.cpp; sourceTree = "<group>"; };
 		9669C0E586B57BD5A7266205 /* support_lib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = support_lib.xcodeproj; path = "build_ios/deps/djinni/support-lib/support_lib.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		BD1C39CAFA2A63E5CBC4D51A /* sqlite3.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = sqlite3.xcodeproj; path = build_ios/deps/sqlite3.xcodeproj; sourceTree = SOURCE_ROOT; };
+		C60723BEA664933B5ED0BA6C /* djinni_main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = djinni_main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		60228C1F6E5409DBC65FF0D3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				77CFDD6AFEF72C73206B6E97 /* libdjinni_jni.a in Frameworks */,
-				76CA062D48CCE30FE0BFB878 /* libsqlite3.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8C142A233327E50E85447537 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		973054CDFCA82189D44F4B4B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0EEE89C452F32D1F2A8AAF71 /* libdjinni_jni.a in Frameworks */,
+				0C4E0F9A835B3FC6D26289A1 /* libsqlite3.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +130,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		286DB96884A5FF2E510E8962 /* deps/djinni/support-lib/jni */ = {
+			isa = PBXGroup;
+			children = (
+				C60723BEA664933B5ED0BA6C /* djinni_main.cpp */,
+			);
+			path = "deps/djinni/support-lib/jni";
+			sourceTree = "<group>";
+		};
 		2B68F2FC235835FF9EF2CF8F /* Build */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,15 +145,6 @@
 				05981DF8B344A7387465BEC9 /* libtodoapp.gyp */,
 			);
 			name = Build;
-			sourceTree = "<group>";
-		};
-		3106335C972455EBBEB78430 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				45AD9B1A7C5F07254DCE47DA /* generated-src/objc */,
-				EEB93363055CBF6CD6C35C5C /* src */,
-			);
-			name = Source;
 			sourceTree = "<group>";
 		};
 		312232D624617B199BAD5126 /* Projects */ = {
@@ -150,23 +156,33 @@
 			name = Projects;
 			sourceTree = "<group>";
 		};
-		45AD9B1A7C5F07254DCE47DA /* generated-src/objc */ = {
+		45AD9B1A7C5F07254DCE47DA /* objc */ = {
 			isa = PBXGroup;
 			children = (
 				5B33272B5501A73B79A54796 /* TDATodo+Private.mm */,
 				0FF79751F0D5B0CADAE03514 /* TDATodo.mm */,
 				651E04F81E1096028B0D7D44 /* TDATodoList+Private.mm */,
 			);
-			path = "generated-src/objc";
+			path = objc;
 			sourceTree = "<group>";
 		};
-		854E6BFB035864497F2621CA /* Products */ = {
+		5249B8C352535E928126B8F8 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				59A56DF0330D447C05D9594A /* libtodoapp_objc.a */,
-				119C56FE81E0CF3B73B3D5EE /* libtodoapp_android.dylib */,
+				286DB96884A5FF2E510E8962 /* deps/djinni/support-lib/jni */,
+				70A1BC6147CDA50BF11E6E88 /* generated-src */,
+				EEB93363055CBF6CD6C35C5C /* src */,
 			);
-			name = Products;
+			name = Source;
+			sourceTree = "<group>";
+		};
+		70A1BC6147CDA50BF11E6E88 /* generated-src */ = {
+			isa = PBXGroup;
+			children = (
+				F2F6EF30C3FB6793D355E923 /* jni */,
+				45AD9B1A7C5F07254DCE47DA /* objc */,
+			);
+			path = "generated-src";
 			sourceTree = "<group>";
 		};
 		85DACD5973395CC133214A16 /* Products */ = {
@@ -178,12 +194,21 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		B431D17071B58171E4008AA6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				59A56DF0330D447C05D9594A /* libtodoapp_objc.a */,
+				0EEAB16E847367051FD0912C /* libtodoapp_jni.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		EA414D55634D67A1500E7C9F = {
 			isa = PBXGroup;
 			children = (
-				3106335C972455EBBEB78430 /* Source */,
+				5249B8C352535E928126B8F8 /* Source */,
 				312232D624617B199BAD5126 /* Projects */,
-				854E6BFB035864497F2621CA /* Products */,
+				B431D17071B58171E4008AA6 /* Products */,
 				2B68F2FC235835FF9EF2CF8F /* Build */,
 			);
 			sourceTree = "<group>";
@@ -194,6 +219,15 @@
 				710A74D3AAB2B576E482F7CC /* todo_list_impl.cpp */,
 			);
 			path = src;
+			sourceTree = "<group>";
+		};
+		F2F6EF30C3FB6793D355E923 /* jni */ = {
+			isa = PBXGroup;
+			children = (
+				8389F9042520B702AEC301ED /* NativeTodo.cpp */,
+				56704A50862D740C379B5A7A /* NativeTodoList.cpp */,
+			);
+			path = jni;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,22 +249,22 @@
 			productReference = 59A56DF0330D447C05D9594A /* libtodoapp_objc.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		F159F96B391BF0243E8A98D9 /* libtodoapp_android */ = {
+		833FC42492E9EA882FC12A10 /* libtodoapp_jni */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 22BFAA19109EBD8492CFEC5D /* Build configuration list for PBXNativeTarget "libtodoapp_android" */;
+			buildConfigurationList = CEAE564F37D9E5F8D197E623 /* Build configuration list for PBXNativeTarget "libtodoapp_jni" */;
 			buildPhases = (
-				44642C58094261587AC3F132 /* Sources */,
-				60228C1F6E5409DBC65FF0D3 /* Frameworks */,
+				7C43500A32DBFABB1DFC5864 /* Sources */,
+				973054CDFCA82189D44F4B4B /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				95DEFCDBF5A283FDFA93CC94 /* PBXTargetDependency */,
-				0B3167D2D002A02C790E77B0 /* PBXTargetDependency */,
+				3235BC9090A555B1F561794F /* PBXTargetDependency */,
+				FBBE483CD4FA98572AD50F03 /* PBXTargetDependency */,
 			);
-			name = libtodoapp_android;
-			productName = todoapp_android;
-			productReference = 119C56FE81E0CF3B73B3D5EE /* libtodoapp_android.dylib */;
+			name = libtodoapp_jni;
+			productName = todoapp_jni;
+			productReference = 0EEAB16E847367051FD0912C /* libtodoapp_jni.dylib */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
 /* End PBXNativeTarget section */
@@ -260,7 +294,7 @@
 			targets = (
 				38EB76B016F29F71E290A784 /* All */,
 				7090BA1345310F67BFD8FF67 /* libtodoapp_objc */,
-				F159F96B391BF0243E8A98D9 /* libtodoapp_android */,
+				833FC42492E9EA882FC12A10 /* libtodoapp_jni */,
 			);
 		};
 /* End PBXProject section */
@@ -290,10 +324,14 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
-		44642C58094261587AC3F132 /* Sources */ = {
+		7C43500A32DBFABB1DFC5864 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC286F54213F324A80629105 /* djinni_main.cpp in Sources */,
+				1B493E0DDA47679F3A9C23EB /* NativeTodo.cpp in Sources */,
+				DFA8F3D4B868E28709C86D01 /* NativeTodoList.cpp in Sources */,
+				CEF9700CD514FCCB12F2FA36 /* todo_list_impl.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,35 +339,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74183CC3AC9FEB6D6AD90FB0 /* TDATodo+Private.mm in Sources */,
-				07549D2B7FADD96E97974414 /* TDATodo.mm in Sources */,
-				55BEED02E7DD756BC6DCB7E8 /* TDATodoList+Private.mm in Sources */,
-				95968C1FCE7D1E655C11C54A /* todo_list_impl.cpp in Sources */,
+				99608618FECBEA1E591C6722 /* TDATodo+Private.mm in Sources */,
+				C50EED03ADD7CCF096AB514F /* TDATodo.mm in Sources */,
+				D6A341C28F8B42934FC09A25 /* TDATodoList+Private.mm in Sources */,
+				FFEDE116F928FE622E07F427 /* todo_list_impl.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		099F6F7C8A20CBC8F08E65E6 /* PBXTargetDependency */ = {
+		0B9F2CAB027CB514DF1B8F8C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F159F96B391BF0243E8A98D9 /* libtodoapp_android */;
-			targetProxy = E9840981B4831BCE90920118 /* PBXContainerItemProxy */;
+			target = 833FC42492E9EA882FC12A10 /* libtodoapp_jni */;
+			targetProxy = 71DA340379E10911D9084D84 /* PBXContainerItemProxy */;
 		};
-		0B3167D2D002A02C790E77B0 /* PBXTargetDependency */ = {
+		3235BC9090A555B1F561794F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = sqlite3;
-			targetProxy = 821AF09ABBFDC16F99255851 /* PBXContainerItemProxy */;
+			name = djinni_jni;
+			targetProxy = 865C408CEDB482338BB5628A /* PBXContainerItemProxy */;
 		};
 		3D351A004A764F1F95772372 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 7090BA1345310F67BFD8FF67 /* libtodoapp_objc */;
 			targetProxy = A3F597F9754465A86A64CD5A /* PBXContainerItemProxy */;
 		};
-		95DEFCDBF5A283FDFA93CC94 /* PBXTargetDependency */ = {
+		FBBE483CD4FA98572AD50F03 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = djinni_jni;
-			targetProxy = 14216CDBBEEC3F6D3EE10B4A /* PBXContainerItemProxy */;
+			name = sqlite3;
+			targetProxy = 44F3932E84E6E35E1E94CC49 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -367,15 +405,7 @@
 			};
 			name = Debug;
 		};
-		48CA9DEF90DD8AE4211CB5A3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INTERMEDIATE_DIR = "$(PROJECT_DERIVED_FILE_DIR)/$(CONFIGURATION)";
-				SHARED_INTERMEDIATE_DIR = "$(SYMROOT)/DerivedSources/$(CONFIGURATION)";
-			};
-			name = Release;
-		};
-		4EA6B2E8885F0C080E390211 /* Debug */ = {
+		40DBE86B236284CF9F7EE98E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
@@ -383,23 +413,31 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				DEAD_CODE_STRIPPING = YES;
 				EXECUTABLE_PREFIX = lib;
-				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				GCC_PREPROCESSOR_DEFINITIONS = "NDEBUG=1";
 				HEADER_SEARCH_PATHS = (
-					include,
-					src/interface,
+					"generated-src/jni",
+					"generated-src/cpp",
+					src,
 					deps,
 					deps/sqlite3,
 					"deps/djinni/support-lib/jni",
 				);
-				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-Wall";
 				OTHER_CPLUSPLUSFLAGS = "-Wall";
-				PRODUCT_NAME = todoapp_android;
+				PRODUCT_NAME = todoapp_jni;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 			};
-			name = Debug;
+			name = Release;
+		};
+		48CA9DEF90DD8AE4211CB5A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INTERMEDIATE_DIR = "$(PROJECT_DERIVED_FILE_DIR)/$(CONFIGURATION)";
+				SHARED_INTERMEDIATE_DIR = "$(SYMROOT)/DerivedSources/$(CONFIGURATION)";
+			};
+			name = Release;
 		};
 		941B1A3B9A72292F7D007697 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -416,7 +454,7 @@
 			};
 			name = Release;
 		};
-		CFD7339070EB3FEF31FB0E30 /* Release */ = {
+		BE399DDFED2024B361B3A24D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
@@ -424,22 +462,24 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				DEAD_CODE_STRIPPING = YES;
 				EXECUTABLE_PREFIX = lib;
-				GCC_PREPROCESSOR_DEFINITIONS = "NDEBUG=1";
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
 				HEADER_SEARCH_PATHS = (
-					include,
-					src/interface,
+					"generated-src/jni",
+					"generated-src/cpp",
+					src,
 					deps,
 					deps/sqlite3,
 					"deps/djinni/support-lib/jni",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-Wall";
 				OTHER_CPLUSPLUSFLAGS = "-Wall";
-				PRODUCT_NAME = todoapp_android;
+				PRODUCT_NAME = todoapp_jni;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 			};
-			name = Release;
+			name = Debug;
 		};
 		EFA9F8458FCE12DCD591C757 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -471,20 +511,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		22BFAA19109EBD8492CFEC5D /* Build configuration list for PBXNativeTarget "libtodoapp_android" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4EA6B2E8885F0C080E390211 /* Debug */,
-				CFD7339070EB3FEF31FB0E30 /* Release */,
-			);
-			defaultConfigurationIsVisible = 1;
-			defaultConfigurationName = Debug;
-		};
 		BA0F3898613C026F8E81F71B /* Build configuration list for PBXAggregateTarget "All" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2EAE506F07B01AA4F338E25D /* Debug */,
 				B42630E06E259907C2706188 /* Release */,
+			);
+			defaultConfigurationIsVisible = 1;
+			defaultConfigurationName = Debug;
+		};
+		CEAE564F37D9E5F8D197E623 /* Build configuration list for PBXNativeTarget "libtodoapp_jni" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE399DDFED2024B361B3A24D /* Debug */,
+				40DBE86B236284CF9F7EE98E /* Release */,
 			);
 			defaultConfigurationIsVisible = 1;
 			defaultConfigurationName = Debug;
