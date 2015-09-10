@@ -1,5 +1,6 @@
 #import "ViewController.h"
 #import "TDATodoList.h"
+#import "TableViewCell.h"
 
 @interface ViewController ()
 
@@ -15,8 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
     UIButton *addButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [addButton addTarget:self
@@ -74,9 +73,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier: @"Cell"];
+        cell = [[TableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier: @"Cell"];
     }
     
     TDATodo *todo = _todos[indexPath.row];
@@ -90,9 +89,23 @@
     }
     
     NSString *todoText = [NSString stringWithFormat:@"%@   %@", completedString, todoLabel];
-    cell.textLabel.text = todoText;
+    cell.label.text = todoText;
+    
+    [cell.button addTarget:self action:@selector(deleteButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    cell.button.tag = [todo id];
     
     return cell;
+    
+}
+
+- (void)deleteButtonPressed:(UIButton*)button {
+    
+    [_todoInterface deleteTodo:(int)button.tag];
+    
+    // get new data from database and update the table view
+    _todos = [[NSMutableArray alloc] initWithArray:[_todoInterface getTodos]];
+    [_tableView reloadData];
+
     
 }
 

@@ -17,6 +17,7 @@
 		F15245FA1BA0DD55006D9799 /* libdjinni_objc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F15245F71BA0DD55006D9799 /* libdjinni_objc.a */; };
 		F15245FB1BA0DD55006D9799 /* libsqlite3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F15245F81BA0DD55006D9799 /* libsqlite3.a */; };
 		F15245FC1BA0DD55006D9799 /* libtodoapp_objc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F15245F91BA0DD55006D9799 /* libtodoapp_objc.a */; };
+		F15246311BA1C4DF006D9799 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F15246301BA1C4DF006D9799 /* TableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,8 @@
 		F15245F71BA0DD55006D9799 /* libdjinni_objc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libdjinni_objc.a; path = "../../deps/djinni/support-lib/build/Debug-iphoneos/libdjinni_objc.a"; sourceTree = "<group>"; };
 		F15245F81BA0DD55006D9799 /* libsqlite3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libsqlite3.a; path = "../../deps/build/Debug-iphoneos/libsqlite3.a"; sourceTree = "<group>"; };
 		F15245F91BA0DD55006D9799 /* libtodoapp_objc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtodoapp_objc.a; path = "../../build/Debug-iphoneos/libtodoapp_objc.a"; sourceTree = "<group>"; };
+		F152462F1BA1C4DF006D9799 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		F15246301BA1C4DF006D9799 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,8 @@
 				F15245DC1BA0DC9C006D9799 /* Images.xcassets */,
 				F15245DE1BA0DC9C006D9799 /* LaunchScreen.xib */,
 				F15245CF1BA0DC9C006D9799 /* Supporting Files */,
+				F152462F1BA1C4DF006D9799 /* TableViewCell.h */,
+				F15246301BA1C4DF006D9799 /* TableViewCell.m */,
 			);
 			path = TodoApp;
 			sourceTree = "<group>";
@@ -232,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F15245D81BA0DC9C006D9799 /* ViewController.m in Sources */,
+				F15246311BA1C4DF006D9799 /* TableViewCell.m in Sources */,
 				F15245D51BA0DC9C006D9799 /* AppDelegate.m in Sources */,
 				F15245D21BA0DC9C006D9799 /* main.mm in Sources */,
 			);
