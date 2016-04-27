@@ -28,7 +28,7 @@ namespace todolist {
         
         // get all records
         sql = "SELECT * FROM todos";
-        if(sqlite3_prepare_v2(db, sql.c_str(), (sizeof(sql)+1), &statement, 0) == SQLITE_OK) {
+        if(sqlite3_prepare_v2(db, sql.c_str(), sql.length()+1, &statement, 0) == SQLITE_OK) {
             int result = 0;
             while(true) {
                 result = sqlite3_step(statement);
@@ -51,6 +51,10 @@ namespace todolist {
             }
             sqlite3_finalize(statement);
 
+        } else {
+            auto error = sqlite3_errmsg(db);
+            if (error!=nullptr) printf("Error: %s", error);
+            else printf("Unknown Error");
         }
         
         return todos;
@@ -120,7 +124,7 @@ namespace todolist {
         // check if table is empty... if so, add some data.
         sql = "SELECT * FROM todos";
         _handle_query(sql);
-        if(sqlite3_prepare_v2(db, sql.c_str(), (sizeof(sql)+1), &statement, 0) == SQLITE_OK) {
+        if(sqlite3_prepare_v2(db, sql.c_str(), sql.length()+1, &statement, 0) == SQLITE_OK) {
             int stat = sqlite3_step(statement);
             if (stat == SQLITE_DONE) {
                 // table was empty, add some data
