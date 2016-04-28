@@ -3,13 +3,14 @@
 
 #pragma once
 
-#include "todo.hpp"
 #include <cstdint>
 #include <memory>
 #include <string>
 #include <vector>
 
 namespace todolist {
+
+struct Todo;
 
 class TodoList {
 public:
