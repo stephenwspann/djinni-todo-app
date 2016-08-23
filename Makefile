@@ -18,3 +18,6 @@ android: GypAndroid.mk
 	@python deps/djinni/example/glob.py ./ '*.apk'
 
 sqlite: ./build_ios/libtodoapp.xcodeproj
+
+clean:
+	rm -rf ./build_ios ./generated-src .*~ src/.*~
